@@ -5,7 +5,7 @@ use warnings;
 use Template::Plugin::Filter;
 use Text::Textile;
 
-our $VERSION = "1.20";
+our $VERSION = "1.21";
 
 use base qw/Template::Plugin::Filter/;
 
@@ -53,12 +53,13 @@ Template::Plugin::Textile2 - Use Textile formatting with Template Toolkit
   [% USE Textile2 -%]
   [% FILTER textile2 %]This *bold* and this is _italic_.[% END %]
 
-  <p>this is <strong>bold</strong> and this is <em>italic</em>
+  <p>this is <strong>bold</strong> and this is <em>italic</em>.
+
 
   [% USE Textile2 ( disable_html => 1 ) -%]
-  [% FILTER textile2 %]this is<br /> _like_ *so* *cool*[% END %]
+  [% FILTER textile2 %]this is<br /> _italic_.[% END %]
 
-  <p>this is&lt;< <em>like</em> <strong>so* *cool</strong></p>
+  <p>this is&lt;br /&gt; <em>italic</em>.</p>
 
 =head1 DESCRIPTION
 
